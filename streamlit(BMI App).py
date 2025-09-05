@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import time as t
-import datetime
+from datetime import date
 st.markdown("<h3 style = 'color:rgb(190,168,120);'># BMI Calculator By Prasanth 😉</h3>",unsafe_allow_html=True)
 
 if "user_text" not in st.session_state:
@@ -123,6 +123,7 @@ st.download_button(
     file_name="Workout_Plan.csv",
     mime="text/csv"
 )
-default_date = datetime.date(2000,1,1)
-BMI_Check = st.date_input("Update Your Next Bmi Check:",value = default_date)
+default_date = date.today()
+BMI_Check = st.date_input("Update Your Next Bmi Check:",value = default_date,min_value=date(2025,9,2),max_value=(2030,12,31))
+
 st.warning(f"⚠️ Your Next Remainder For BMI Check is '{BMI_Check}'")
