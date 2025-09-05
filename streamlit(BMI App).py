@@ -124,6 +124,7 @@ st.download_button(
     mime="text/csv"
 )
 default_date = date.today()
-BMI_Check = st.date_input("Update Your Next Bmi Check:",value = default_date,min_value=date(2025,9,2),max_value=(2030,12,31))
+BMI_Check = st.date_input("Update Your Next Bmi Check:",value = default_date,min_value=date(2025,9,2),max_value=date(2030,12,31))
 
 st.warning(f"⚠️ Your Next Remainder For BMI Check is '{BMI_Check}'")
+
